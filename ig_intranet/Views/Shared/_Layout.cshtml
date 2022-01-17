@@ -1,0 +1,197 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+    <script src="~/Scripts/jquery-2.1.1.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+
+    <!--***********************************************************************************-->
+    <script src="http://1c.inlinegroup.ru/EDO_imp/scripts/webclient1ce.js"></script>
+    <script>
+        var webClient = null;
+        var start_1c_edo_imp = function () {
+            hide(document.getElementById('id1'));
+            document.getElementById("webClientContainer").innerHTML = "";
+            webClient = new WebClient1CE('webClientContainer',
+                {
+                    /*webClientURL: 'http://1c.inlinegroup.ru/EDO_imp/ru_RU?N="Юрин Владимир Владимирович"', //&P=1*/
+                    /*webClientURL: 'http://10.7.64.243:82/local_edo_zup/ru_RU/',*/
+                    webClientURL: 'http://1c.inlinegroup.ru/EDO_imp/ru_RU',
+                    width: '100%',
+                    height: '100%'
+                });
+        };
+        var start_ig_bd_test_web = function () {
+            hide(document.getElementById('id1'));
+            document.getElementById("webClientContainer").innerHTML = "";
+            webClient = new WebClient1CE('webClientContainer',
+                {
+                    webClientURL: 'http://1c-db-lists.inlinegroup.ru/DOC_osb/ru_RU/?N=Пользователь',
+                    /*webClientURL: 'http://10.7.64.243:82/ig_bd_test_web/ru_RU/',*/
+                    width: '100%',
+                    height: '100%'
+                });
+        };
+        var start_1c_edo_imp_url_au = function () {
+            hide(document.getElementById('id1'));
+            document.getElementById("webClientContainer").innerHTML = "";
+            param1 = document.getElementById("param1").innerHTML;
+            param2 = document.getElementById('param2').innerHTML;
+            webClient = new WebClient1CE('webClientContainer',
+                {
+                    webClientURL: 'http://1c.inlinegroup.ru/EDO_imp/ru_RU?N="' + param1 + '"&P=' + param2 + '',
+                    width: '100%',
+                    height: '100%'
+                });
+        };
+
+        window.onload = function () {
+            var p_url = location.search.substring(1);
+            var parametr = p_url.split("&");
+            if (parametr.length > 1) {
+                param1 = parametr[0].split("=")[1];
+                param2 = parametr[1].split("=")[1];
+                document.getElementById("param1").innerHTML = param1;
+                document.getElementById('param2').innerHTML = param2;
+                if ((param1 == "noUser") || (param2 == "noPass")) {
+                    start_1c_edo_imp();
+                } else {
+                    start_1c_edo_imp_url_au();
+                }
+                //setLocation("http://my_loc_site.ru:82/");
+                //setTimeout(setLocation_, 1000);
+            };
+            function setLocation(curLoc) {
+                location.href = curLoc;
+                location.hash = curLoc;
+            }
+        };
+        function hide(element) {
+            element.style.display = 'none';
+        }
+    </script>
+
+    <style type="text/css">
+        .ig_content {
+            //position: relative;
+            width: 95%;
+            height: 95%;
+            background: #FFFFFF;
+            padding: 5px;
+            border: 0px;
+            float: left;
+        }
+        .ig_1c_frame {            
+            width: 100%;
+            height: 100%;
+        }
+        .ig_container {
+            /*min-width: 100%;
+            /min-height: 100%;*/
+            //position: relative;
+            /*width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;*/
+        }
+
+        .menu_table {
+            width: 99%;
+            height: 99%;
+            border: 0px;
+        }
+
+        td {
+            vertical-align: top;
+        }
+
+        .pseudolink {
+            //color:blue;
+            color: #0000A0;
+            //text-decoration:underline;
+            text-decoration: none;
+            cursor: pointer;
+            background: url("Content/images/logo14.png") no-repeat;
+            background-image: url("Content/images/logo14.png");
+        }
+
+        .sidebar {
+            display: inline-block;
+            display: flex;
+            align-items: space-evenly;
+            justify-content: space-evenly;
+            width: 99%;
+            background: #FFFFFF;
+            padding: 5px;
+            border: 0px;
+            text-align: center;
+            padding-top: 10%;
+        }
+
+        A {
+            color: #0000A0;
+            text-decoration: none;
+        }
+
+            A: visited {
+                color: #0000A0;
+            }
+    </style>
+
+    <!--***********************************************************************************-->
+
+</head>
+<body>
+<!--<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            @Html.ActionLink("Enum Sample", "Index", "Home", null, new { @class = "navbar-brand" })
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+            </ul>
+        </div>
+    </div>
+</div>
+-->
+<div id="param1" style='display: none; visibility: hidden;'></div>
+<div id="param2" style='display: none; visibility: hidden;'></div>
+<div class="ig_container">
+    <div class="sidebar" id="id1">
+        <div><a href="http://1c.inlinegroup.ru/reports/browse/"><img src="~/Content/images/logo1.png" width="120" heigth="120" title="Reporting Server"><br />Reporting Server</a></div>
+        <!--
+            <div><a href="http://1c.inlinegroup.ru/IG_ERP"><img src="images/logo10.png" width="120" heigth="120" title="ERP"><br />1С ЕРП</a></div>
+            <div><a href="http://1c.inlinegroup.ru/IG_DOC"><img src="Content/images/logo2.png" width="120" heigth="120" title="DOC"><br />1С Документооборот</a></div>
+         -->
+        <div><span class="pseudolink" onclick="start_ig_bd_test_web();"><img src="~/Content/images/logo3.png" width="120" heigth="120" title="1С Реализация онлайн (тест)"><br />1С Реализация онлайн (тест)</span></div>
+        <!--<div><span class="pseudolink" onclick = "start_1c_edo_imp();"><img src="images/logo9.png" width="120" heigth="120" title="EDO_imp"><br />1С Личный кабинет сотрудника</span></div>-->
+        <div><a href="http://8m-1creport/reports/report/IMP/LogInLK"><img src="~/Content/images/logo9.png" width="120" heigth="120" title="1С Личный кабинет сотрудника"><br />1С Личный кабинет сотрудника</a></div>        
+        <div><a href="@Url.Action("Index", "Home", new { id = "start_1c_imp" })"><img src="~/Content/images/logo9.png" width="120" heigth="120"><br />1С Личный кабинет сотрудника</a></div>        
+     </div>
+</div>
+<div class="ig_content">
+    <div class="ig_1c_frame" id="webClientContainer"></div>
+</div>
+<div id="webClientMessageArea"></div>
+
+
+<div class="container body-content">
+    @RenderBody()
+    <hr />
+    <footer>
+        <p>&copy; @DateTime.Now.Year - INLINE <samp>(v 0.2)</samp></p>
+    </footer>
+</div>
+
+</body>
+</html>
