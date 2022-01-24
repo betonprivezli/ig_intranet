@@ -9,9 +9,8 @@ namespace EnumSample.Models
     
     public class UsersImpContext : DbContext
     {
-        public DbSet<UsersImp> UsersImp { get; set; }
-        public DbSet<MyData> MyData { get; set; }
-        public DbSet<UsersDo> UsersDo { get; set; }
+        public DbSet<UsersImp> UsersImp { get; set; }        
+        public DbSet<MyData> MyData { get; set; }        
 
     }
 }
