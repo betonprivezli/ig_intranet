@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+    <script src="~/Scripts/jquery-2.1.1.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <!--***********************************************************************************-->
+    <script src="http://1c.inlinegroup.ru/EDO_imp/scripts/webclient1ce.js"></script>
+    <script src="~/Scripts/ig_scripts/start_1c_imp.js"></script>
+    <link href="~/Content/ig_files/ig_main_page.css" rel="stylesheet" />  
+    <!--***********************************************************************************-->
+</head>
+<body>
+<!--<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            @Html.ActionLink("Enum Sample", "Index", "Home", null, new { @class = "navbar-brand" })
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+            </ul>
+        </div>
+    </div>
+</div>
+-->
+<div id="param1" style='display: none; visibility: hidden;'></div>
+<div id="param2" style='display: none; visibility: hidden;'></div>
+<div class="ig_container">
+    <div class="sidebar" id="id1">
+        <div><a href="http://1c.inlinegroup.ru/reports/browse/"><img src="~/Content/ig_files/images/logo1.png" width="120" heigth="120" title="Reporting Server"><br />Reporting Server</a></div>
+        <!--
+        <div><a href="http://1c.inlinegroup.ru/IG_ERP"><img src="images/logo10.png" width="120" heigth="120" title="ERP"><br />1С ЕРП</a></div>
+        <div><a href="http://1c.inlinegroup.ru/IG_DOC"><img src="Content/images/logo2.png" width="120" heigth="120" title="DOC"><br />1С Документооборот</a></div>
+     -->
+        <div><span class="pseudolink" onclick="start_ig_bd_test_web();"><img src="~/Content/ig_files/images/logo3.png" width="120" heigth="120" title="1С Реализация онлайн (тест)"><br />1С Реализация онлайн (тест)</span></div>
+        <!--<div><span class="pseudolink" onclick = "start_1c_edo_imp();"><img src="images/logo9.png" width="120" heigth="120" title="EDO_imp"><br />1С Личный кабинет сотрудника</span></div>
+        <div><a href="http://8m-1creport/reports/report/IMP/LogInLK"><img src="~/Content/ig_files/images/logo9.png" width="120" heigth="120" title="1С Личный кабинет сотрудника"><br />1С Личный кабинет сотрудника</a></div>
+        @if (@Html.ViewBag.Identity_Name == "INLINEGROUP\\v.yurin")
+        {
+            <div><a href="@Url.Action("Start_1c_web", "Home", new { id = "1c_imp" })"><img src="~/Content/ig_files/images/logo9.png" width="120" heigth="120"><br />1С Личный кабинет сотрудника</a></div>
+        }
+        -->
+        <div><a href="@Url.Action("Start_1c_web", "Home", new { id = "1c_imp" })"><img src="~/Content/ig_files/images/logo9.png" width="120" heigth="120"><br />1С Личный кабинет сотрудника</a></div>
+    </div>
+</div>
+<div class="ig_content">
+    <div class="ig_1c_frame" id="webClientContainer"></div>
+</div>
+<div id="webClientMessageArea"></div>
+<div class="container body-content">
+    @RenderBody()
+    <hr />
+    <footer>
+        <p>&copy; @DateTime.Now.Year - INLINE <samp>(v 0.6)</samp></p>
+    </footer>
+</div>
+
+</body>
+</html>

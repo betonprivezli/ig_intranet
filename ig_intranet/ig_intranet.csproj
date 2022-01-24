@@ -101,6 +101,24 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\ig_files\ig_main_page.css" />
+    <Content Include="Content\ig_files\images\logo1.png" />
+    <Content Include="Content\ig_files\images\logo10.png" />
+    <Content Include="Content\ig_files\images\logo11.png" />
+    <Content Include="Content\ig_files\images\logo12.png" />
+    <Content Include="Content\ig_files\images\logo13.png" />
+    <Content Include="Content\ig_files\images\logo14.png" />
+    <Content Include="Content\ig_files\images\logo15.png" />
+    <Content Include="Content\ig_files\images\logo16.png" />
+    <Content Include="Content\ig_files\images\logo17.png" />
+    <Content Include="Content\ig_files\images\logo2.png" />
+    <Content Include="Content\ig_files\images\logo3.png" />
+    <Content Include="Content\ig_files\images\logo4.png" />
+    <Content Include="Content\ig_files\images\logo5.png" />
+    <Content Include="Content\ig_files\images\logo6.png" />
+    <Content Include="Content\ig_files\images\logo7.png" />
+    <Content Include="Content\ig_files\images\logo8.png" />
+    <Content Include="Content\ig_files\images\logo9.png" />
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -113,6 +131,7 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-2.1.1.intellisense.js" />
+    <Content Include="Scripts\ig_scripts\start_1c_imp.js" />
     <Content Include="Scripts\jquery-2.1.1.js" />
     <Content Include="Scripts\jquery-2.1.1.min.js" />
     <Content Include="Scripts\jquery-2.1.1.min.map" />
@@ -146,6 +165,10 @@
     <Compile Include="Models\MyData.cs" />
     <Compile Include="Models\MyData2.cs" />
     <Compile Include="Models\MyDataContext.cs" />
+    <Compile Include="Models\UsersDo.cs" />
+    <Compile Include="Models\UsersDoContext.cs" />
+    <Compile Include="Models\UsersImp.cs" />
+    <Compile Include="Models\UsersImpContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -154,6 +177,8 @@
     <Content Include="Views\Shared\DisplayTemplates\Enum.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Enum-radio.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Enum.cshtml" />
+    <Content Include="Views\Home\Start_1c_web.cshtml" />
+    <Content Include="Views\Home\index_old.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -1,0 +1,88 @@
+﻿@{
+    Layout = null;
+}
+<HTML xmlns="http://www.w3.org/1999/xhtml">
+<HEAD>
+    <META http-equiv="Content-Type" content="text/html;  charset=utf-8" />
+    <script>
+        window.onload = function () {
+            document.getElementById("INPUT_submit").click();
+        };
+    </script>
+</HEAD>
+<BODY>
+    @if (@Html.ViewBag.id == "1c_imp")
+    {
+        <!--<FORM action="http://1c.inlinegroup.ru/EDO_imp/e1cib/start" method="post" style="display:none">-->
+
+        <FORM action="http://1c-db-lists/EDO_imp/e1cib/start" method="post" style="display:none">
+            <INPUT id="usr" name="usr" value="@Html.ViewBag.User_imp" type="hidden" /><BR />
+            <INPUT id="pwd" name="pwd" value="@Html.ViewBag.User_imp_p" type="hidden" /><BR />
+            Startup options: <INPUT id="launchparameter" name="launchparameter" /><BR />
+            Interface language:
+            <SELECT id="systemlanguage" name="systemlanguage">
+                <OPTION value="ru" selected="">Russian</OPTION>
+                <OPTION value="en" >English</OPTION>
+            </SELECT><BR />
+            Session locale code:
+            <SELECT id="localecode" name="localecode">
+                <OPTION value="ru" selected="">Russian</OPTION>
+                <OPTION value="en">English</OPTION>
+            </SELECT><BR />
+            Data area: <INPUT id="zone" name="zone" />
+            <INPUT id="AuthFailRedirectURL" type="hidden" name="AuthFailRedirectURL1" value="http://1c.inlinegroup.ru" />
+            <INPUT id="authfailhandling" type="hidden" value="redirect" name="authfailhandling" />
+            <P><INPUT type="submit" value="Start" id="INPUT_submit" />             </P>
+        </FORM>
+    }
+    @if (@Html.ViewBag.id == "1c_DO")
+    {
+        <FORM action="http://1c-db-lists/IG_DOC/e1cib/start" method="post" style="display:none">
+            <INPUT id="usr" name="usr" type="hidden" /><BR />
+            <INPUT id="pwd" name="pwd" type="hidden" /><BR />
+            Startup options: <INPUT id="launchparameter" name="launchparameter" /><BR />
+            Interface language:
+            <SELECT id="systemlanguage" name="systemlanguage">
+                <OPTION value="ru" selected="">Russian</OPTION>
+                <OPTION value="en">English</OPTION>
+            </SELECT><BR />
+            Session locale code:
+            <SELECT id="localecode" name="localecode">
+                <OPTION value="ru" selected="">Russian</OPTION>
+                <OPTION value="en">English</OPTION>
+            </SELECT><BR />
+            Data area: <INPUT id="zone" name="zone" />
+            <INPUT id="AuthFailRedirectURL" type="hidden" name="AuthFailRedirectURL1" value="http://1c.inlinegroup.ru" />
+            <INPUT id="authfailhandling" type="hidden" value="redirect" name="authfailhandling" />
+            <P><INPUT type="submit" value="Start" id="INPUT_submit" />             </P>
+        </FORM>
+    }
+    @if (@Html.ViewBag.id == "1c_real")
+    {
+        <FORM action="http://1c-db-lists.inlinegroup.ru/DOC_osb/ru_RU/e1cib/start" method="post" style="display:none">
+            <INPUT id="usr" name="usr" value="Пользователь" type="hidden" /><BR />
+            <INPUT id="pwd" name="pwd" value="" type="hidden" /><BR />
+            <INPUT id="lowclientconnectionspeed" type="checkbox" name="lowclientconnectionspeed" /><BR />
+            Startup options: <INPUT id="launchparameter" name="launchparameter" /><BR />
+            Interface language:
+            <SELECT id="systemlanguage" name="systemlanguage">
+                <OPTION value="ru" selected="">Russian</OPTION>
+                <OPTION value="en">English</OPTION>
+            </SELECT><BR />
+            Session locale code:
+            <SELECT id="localecode" name="localecode">
+                <OPTION value="ru" selected="">Russian</OPTION>
+                <OPTION value="en">English</OPTION>
+            </SELECT><BR />
+            Data area: <INPUT id="zone" name="zone" />
+            <!--
+                <INPUT id="AuthFailRedirectURL" type="hidden" name="AuthFailRedirectURL" value="http://1c.inlinegroup.ru" />
+                AuthFailRedirectURL с таким параметром скидывает как будто ошибка
+            -->
+            <INPUT id="AuthFailRedirectURL" type="hidden" name="AuthFailRedirectURL1" value="http://1c.inlinegroup.ru" />
+            <INPUT id="authfailhandling" type="hidden" value="redirect" name="authfailhandling" />
+            <INPUT type="submit" value="Start" id="INPUT_submit" />
+        </FORM>
+    }
+</BODY>
+</HTML>

@@ -1,0 +1,74 @@
+﻿@{
+    Layout = null;
+}
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+
+
+    @if (@Html.ViewBag.id == "1c_imp")
+    {
+        <script src="http://1c.inlinegroup.ru/EDO_imp/scripts/webclient1ce.js"></script>
+        <script>
+            window.onload = function ()
+            {
+                start_1c_edo_imp();
+            };
+            var webClient = null;
+            var start_1c_edo_imp = function ()
+            {
+                document.getElementById("webClientContainer").innerHTML = "";
+                webClient = new WebClient1CE('webClientContainer',
+                {
+                    webClientURL: 'http://1c.inlinegroup.ru/EDO_imp/ru_RU?N="@Html.ViewBag.User_imp"&P=@Html.ViewBag.User_imp_p',
+                    width: '100%',
+                    height: '100%'
+                });
+            };
+        </script>
+    }
+
+
+    @if (@Html.ViewBag.id == "1c_real")
+    {
+        <script src="http://1c-db-lists.inlinegroup.ru/DOC_osb/scripts/webclient1ce.js"></script>
+        <script>
+            window.onload = function ()
+            {
+                start_1c_realiz();
+            };
+            var webClient = null;
+            var start_1c_realiz = function ()
+            {
+                document.getElementById("webClientContainer").innerHTML = "";
+                webClient = new WebClient1CE('webClientContainer',
+                {
+                    webClientURL: 'http://1c-db-lists.inlinegroup.ru/DOC_osb/ru_RU/?N=Пользователь',
+                    width: '100%',
+                    height: '100%'
+                });
+            };
+        </script>
+    }
+
+
+    <style type="text/css">
+        .content {
+            width: 95%;
+            height: 95%;
+            background: #FFFFFF;
+            padding: 5px;
+            border: 0px;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <div id="webClientContainer"></div>
+    </div>
+    <div id="webClientMessageArea"></div>
+</body>
+</html>
+
