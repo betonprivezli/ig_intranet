@@ -11,12 +11,9 @@ namespace EnumSample
         protected void Application_Start()
         {
             // Clear the database each time we start; not recommended for production use
-
-            //Database.SetInitializer<UsersImpContext>(new DropCreateDatabaseAlways<UsersImpContext>());            
-
             //https://metanit.com/sharp/entityframework/3.9.php
-            //Database.SetInitializer<UsersImpContext>(new CreateDatabaseIfNotExists<UsersImpContext>());
-            //Database.SetInitializer<UsersDoContext>(new CreateDatabaseIfNotExists<UsersDoContext>());
+            //Database.SetInitializer<MyDataContext>(new DropCreateDatabaseAlways<MyDataContext>());            
+            //Database.SetInitializer<MyDataContext>(new CreateDatabaseIfNotExists<MyDataContext>());
 
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);

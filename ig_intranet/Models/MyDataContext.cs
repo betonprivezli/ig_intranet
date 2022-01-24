@@ -19,8 +19,9 @@ namespace EnumSample.Models
         {
         }
 
-        public System.Data.Entity.DbSet<EnumSample.Models.MyData> MyDatas { get; set; }
-    
+        public DbSet<UsersImp> UsersImp { get; set; }
+        public DbSet<UsersDo> UsersDo { get; set; }
+
     }
 
 }

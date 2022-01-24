@@ -13,7 +13,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>EnumSample</RootNamespace>
     <AssemblyName>EnumSample</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
@@ -160,15 +160,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\BookContext.cs" />
-    <Compile Include="Models\Enums.cs" />
-    <Compile Include="Models\MyData.cs" />
-    <Compile Include="Models\MyData2.cs" />
     <Compile Include="Models\MyDataContext.cs" />
     <Compile Include="Models\UsersDo.cs" />
-    <Compile Include="Models\UsersDoContext.cs" />
     <Compile Include="Models\UsersImp.cs" />
-    <Compile Include="Models\UsersImpContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
