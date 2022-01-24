@@ -29,6 +29,9 @@ namespace EnumSample.Controllers
 
             }else if(id == "1c_imp")
             {
+                //var usr = db.UsersImp.Where(p => p.User_in_Domen == "v.yurin");
+
+
                 ViewBag.UsersImp = db.UsersImp.ToArray();
                 
                 
